@@ -1,0 +1,139 @@
+@use "reset.scss";
+@use "libs.scss";
+@use "vars.scss" as v;
+@use "global.scss";
+
+
+
+.header {
+    height: 106px;
+    background-color: #AAB7B0;
+    width: 100%;
+    filter: drop-shadow(0px 4px 25px #000000);
+}
+
+.top {
+    background-color: #809692;
+    position: relative;
+
+    &::before {
+        content: url(../images/bg-1.png);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        content: url(../images/bg2.png);
+        position: absolute;
+        bottom: 100px;
+        right: 0;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        padding-top: 195px;
+        gap: 105px;
+    }
+
+    &__blok {
+        position: relative;
+        transition: all 1.3s;
+    }
+
+    &__sub-title {
+        color: #fff;
+        @include v.font-style-regular;
+        font-size: 64px;
+    }
+
+    &__description {
+        max-width: 427px;
+        color: #fff;
+        @include v.font-style-regular;
+        font-size: 32px;
+
+        &.left {
+            text-align: right;
+            max-width: 375px;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: -105px;
+        left: -160px;
+    }
+}
+
+.bunny{
+    position: relative;
+    z-index: 99;
+    transition: all 1.3s;
+}
+
+.bunny.element-animation{
+    opacity: 0;
+    transform: translateY(400px);
+    overflow: hidden;
+}
+.bunny.element-animation.element-show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top__blok.element-animation{
+    opacity: 0;
+    transform: translateY(200px);
+    overflow: hidden;
+}
+.top__blok.element-animation.element-show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top__title-text.element-animation{
+    overflow: hidden;
+    opacity: 0;
+    transition: all 2s;
+}
+.top__title-text.element-animation.element-show{
+    opacity: 1;
+}
+
+
+
+.video {
+    &::before{
+        content: "";
+        position: absolute;
+        top: -50px;
+        background-color: #FAF6EE;
+        width: 100%;
+        height: 50px;
+    }
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #FAF6EE;
+    position: relative;
+    &__wave{
+        position: absolute;
+        top: -130px;
+        left: 0;
+        right: 0;
+        display: flex;
+        overflow: hidden;
+        z-index: 1;
+    }
+    &__wave-border{
+        background-color: #FAF6EE;
+        width: 244px;
+        height: 90px;
+        border-radius: 100% 100% 0 0;
+    }
+}
+.video__inner {
+
+}
